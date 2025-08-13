@@ -1,0 +1,33 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  dev-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo preview
+
+  dev-deploy:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - run: echo deploy
+
+  prod-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo preview
+
+  prod-deploy:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - run: echo deploy
