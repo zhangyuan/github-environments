@@ -18,6 +18,7 @@ jobs:
   dev-deploy:
     runs-on: ubuntu-latest
     environment: dev
+    needs: [dev-preview]
     steps:
       - run: echo deploy
 
@@ -29,5 +30,6 @@ jobs:
   prod-deploy:
     runs-on: ubuntu-latest
     environment: prod
+    needs: [prod-preview]
     steps:
       - run: echo deploy
